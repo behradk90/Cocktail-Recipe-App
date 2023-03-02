@@ -15,8 +15,8 @@ function App() {
           <Route path='/' element={<Home />} />
           <Route path='/cocktail-list' element={<ShowCocktailList />} />
           <Route path='/create-cocktail' element={<CreateCocktail />} />
-          <Route path='/edit-book/:id' element={<UpdateCocktailInfo />} />
-          <Route path='/show-book/:id' element={<ShowCocktailDetails />} />
+          <Route path='/edit-cocktail/:id' element={<UpdateCocktailInfo />} />
+          <Route path='/show-cocktail/:id' element={<ShowCocktailDetails />} />
         </Routes>
       </div>
     </Router>
