@@ -28,7 +28,7 @@ function ShowCocktailList() {
                 <div className="row">
                     <div className="col-md-12">
                         <br />
-                        <h2 className="display-4 text-center">Book List</h2>
+                        <h2 className="display-4 text-center">Cocktail List</h2>
                     </div>
 
                     <div className="col-md-11">
@@ -49,4 +49,4 @@ function ShowCocktailList() {
     );
 };
 
-module.exports = ShowCocktailList;
+export default ShowCocktailList;

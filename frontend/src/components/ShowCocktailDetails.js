@@ -3,7 +3,7 @@ import { Link, useParams, useNavigate } from 'react-router-dom';
 import axios from "axios";
 
 function ShowCocktailDetails(props) {
-    const [cocktail, setCocktail] = useState();
+    const [cocktail, setCocktail] = useState({});
 
     const { id } = useParams();
     const navigate = useNavigate();
@@ -26,6 +26,7 @@ function ShowCocktailDetails(props) {
             })
             .catch((err) => {
                 console.log('Error from ShowCocktailDetails deleteClick')
+                console.log(err.response.data)
             });
     };
 
@@ -114,4 +115,4 @@ function ShowCocktailDetails(props) {
 
 }
 
-module.exports = ShowCocktailDetails;
+export default ShowCocktailDetails;

@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link, useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
-import { useState } from "react";
 
 function UpdateCocktailInfo(props) {
     const [cocktail, setCocktail] = useState({
@@ -17,7 +16,8 @@ function UpdateCocktailInfo(props) {
     const navigate = useNavigate();
 
     useEffect(() => {
-        axios.get(`http://localhost:8080/cocktails/${id}`)
+        axios
+            .get(`http://localhost:8080/cocktails/${id}`)
             .then((res) => {
                 setCocktail({
                     name: res.data.name,
@@ -49,13 +49,15 @@ function UpdateCocktailInfo(props) {
             garnish: cocktail.garnish,
         }
 
+
         axios
             .put(`http://localhost:8080/cocktails/${id}`, data)
             .then((res) => {
-                navigate(`/show/cocktail/${id}`);
+                navigate(`/show-cocktail/${id}`);
             })
             .catch((err) => {
                 console.log('Error in UpdateCocktailInfo!');
+                console.log(err.response.data);
             });
     };
 
@@ -92,7 +94,7 @@ function UpdateCocktailInfo(props) {
                         <div className="form-group">
                             <label htmlFor="name">Description</label>
                             <input type="text"
-                                placeholder="Name of Cocktail"
+                                placeholder="Description/History"
                                 name="description"
                                 className="form-control"
                                 value={cocktail.description}
@@ -104,7 +106,7 @@ function UpdateCocktailInfo(props) {
                         <div className="form-group">
                             <label htmlFor="name">Recipe</label>
                             <input type="text"
-                                placeholder="Name of Cocktail"
+                                placeholder="Drink Recipe"
                                 name="recipe"
                                 className="form-control"
                                 value={cocktail.recipe}
@@ -116,7 +118,7 @@ function UpdateCocktailInfo(props) {
                         <div className="form-group">
                             <label htmlFor="name">Glass Type</label>
                             <input type="text"
-                                placeholder="Name of Cocktail"
+                                placeholder="Glass Type"
                                 name="glass"
                                 className="form-control"
                                 value={cocktail.glass}
@@ -128,7 +130,7 @@ function UpdateCocktailInfo(props) {
                         <div className="form-group">
                             <label htmlFor="name">Ice Type</label>
                             <input type="text"
-                                placeholder="Name of Cocktail"
+                                placeholder="Ice Type"
                                 name="ice"
                                 className="form-control"
                                 value={cocktail.ice}
@@ -140,7 +142,7 @@ function UpdateCocktailInfo(props) {
                         <div className="form-group">
                             <label htmlFor="name">Garnish</label>
                             <input type="text"
-                                placeholder="Name of Cocktail"
+                                placeholder="Garnish"
                                 name="garnish"
                                 className="form-control"
                                 value={cocktail.garnish}
@@ -162,4 +164,4 @@ function UpdateCocktailInfo(props) {
     );
 };
 
-module.exports = UpdateCocktailInfo;
+export default UpdateCocktailInfo;

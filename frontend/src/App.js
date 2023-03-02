@@ -2,7 +2,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
 
 import Home from './components/Home';
-import ShowCocktailList from './components/ShowCocktailList';
+import ShowCocktailList from './components/ShowCocktailList'
 import CreateCocktail from './components/CreateCocktail';
 import UpdateCocktailInfo from './components/UpdateCocktailInfo';
 import ShowCocktailDetails from './components/ShowCocktailDetails';

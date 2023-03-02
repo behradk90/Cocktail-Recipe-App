@@ -20,5 +20,4 @@ const RecipeCard = (props) => {
         </div>
     )
 };
-
-module.exports = RecipeCard;
+export default RecipeCard;

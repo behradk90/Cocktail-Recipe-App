@@ -22,7 +22,7 @@ const CreateCocktail = (props) => {
     const onSubmit = (e) => {
         e.preventDefault();
 
-        axios.post('http://localhost:8080/cocktails', cocktails)
+        axios.post('http://localhost:8080/cocktails', cocktail)
             .then((res) => {
                 setCocktail({
                     name: '',
