@@ -33,7 +33,7 @@ const CreateCocktail = (props) => {
                     garnish: '',
                 });
 
-                navigate('/');
+                navigate('/cocktail-list');
             })
             .catch((err) => {
                 console.log('Error in CreateCocktail!');
