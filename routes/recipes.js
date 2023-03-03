@@ -24,13 +24,13 @@ router.post('/', (req, res) => {
 });
 
 router.put('/:id', (req, res) => {
-    Cocktail.findByIdAndUpdate(req, params.id, req.body)
+    Cocktail.findByIdAndUpdate(req.params.id, req.body)
         .then(cocktail => res.json({ msg: 'Updated successfully!' }))
         .catch(err =>
             res.status(400).json({ error: 'Unable to update the Database.' }))
 });
 
-router.delete(':/id', (req, res) => {
+router.delete('/:id', (req, res) => {
     Cocktail.findByIdAndRemove(req.params.id, req.body)
         .then(cocktail => res.json({ msg: 'Cocktail deleted successfully!' }))
         .catch(err => res.status(404).json({ error: 'No such a Cocktail.' }))

@@ -26,7 +26,7 @@ function ShowCocktailDetails(props) {
             })
             .catch((err) => {
                 console.log('Error from ShowCocktailDetails deleteClick')
-                console.log(err.response.data)
+                console.log(err)
             });
     };
 
