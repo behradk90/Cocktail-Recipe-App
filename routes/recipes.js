@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
-const Cocktail = require('../models/schema');
+const Cocktail = require('../models/recipe');
 
 router.get('/test', (req, res) => res.send('Recipes route testing!'));
 
