@@ -1,7 +1,8 @@
 const express = require('express');
 const connectDB = require('./config/db')
 const cors = require('cors');
-const cocktails = require('./routes/recipes');
+const cocktailRoutes = require('./routes/recipes');
+const userRoutes = require('./routes/users');
 
 const app = express();
 
@@ -19,6 +20,7 @@ app.use(express.json({ extended: false }));
 app.get('/', (req, res) => res.send('Jello world!'));
 
 // Routes
-app.use('/cocktails', cocktails)
+app.use('/cocktails', cocktailRoutes);
+app.use('/user', userRoutes);
 
 app.listen(port, () => console.log(`Server listening on port: ${port}`));
