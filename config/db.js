@@ -6,6 +6,7 @@ const connectDB = async () => {
     try {
         mongoose.set('strictQuery', true);
         await mongoose.connect(db, {
+            useUnifiedTopology: true,
             useNewUrlParser: true,
         });
 
