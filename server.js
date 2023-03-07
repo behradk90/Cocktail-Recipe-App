@@ -15,6 +15,8 @@ connectDB();
 app.use(cors({ origin: true, credentials: true }));
 // Init middleware
 app.use(express.json({ extended: false }));
+// Parse requests of content-type - application/x-www-form-urlencoded
+app.use(express.urlencoded({ extended: true }));
 
 
 app.get('/', (req, res) => res.send('Jello world!'));
