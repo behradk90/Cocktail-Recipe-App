@@ -1,11 +1,11 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
 
-import Home from './components/Home';
-import ShowCocktailList from './components/ShowCocktailList'
-import CreateCocktail from './components/CreateCocktail';
-import UpdateCocktailInfo from './components/UpdateCocktailInfo';
-import ShowCocktailDetails from './components/ShowCocktailDetails';
+import Home from './components/home/Home';
+import ShowCocktailList from './components/myCocktails/ShowCocktailList'
+import CreateCocktail from './components/myCocktails/CreateCocktail';
+import UpdateCocktailInfo from './components/myCocktails/UpdateCocktailInfo';
+import ShowCocktailDetails from './components/myCocktails/ShowCocktailDetails';
 
 function App() {
   return (
