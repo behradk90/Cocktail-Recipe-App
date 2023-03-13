@@ -1,39 +1,34 @@
 const express = require('express');
 const router = express.Router();
-
+const {
+    cocktailList,
+    cocktailDetails,
+    createCocktail,
+    updateCocktail,
+    deleteCocktail
+} = require('../controllers/recipe.controller')
 const Cocktail = require('../models/recipe');
 
 router.get('/test', (req, res) => res.send('Recipes route testing!'));
 
-router.get('/', (req, res) => {
-    Cocktail.find()
-        .then(cocktails => res.json(cocktails))
-        .catch(err => res.status(404).json({ nococktailsfound: 'No cocktails found.' }))
+router.get('/', cocktailList, function (req, res) {
+
 });
 
-router.get('/:id', (req, res) => {
-    Cocktail.findById(req.params.id)
-        .then(cocktail => res.json(cocktail))
-        .catch(err => res.status(404).json({ nococktailfound: 'No cocktail found.' }))
+router.get('/:id', cocktailDetails, function (req, res) {
+
 });
 
-router.post('/', (req, res) => {
-    Cocktail.create(req.body)
-        .then(cocktail => res.json({ msg: 'Cocktail added successfully!' }))
-        .catch(err => res.status(400).json({ error: 'Unable to add this Cocktail.' }))
+router.post('/', createCocktail, function (req, res) {
+
 });
 
-router.put('/:id', (req, res) => {
-    Cocktail.findByIdAndUpdate(req.params.id, req.body)
-        .then(cocktail => res.json({ msg: 'Updated successfully!' }))
-        .catch(err =>
-            res.status(400).json({ error: 'Unable to update the Database.' }))
+router.put('/:id', updateCocktail, function (req, res) {
+
 });
 
-router.delete('/:id', (req, res) => {
-    Cocktail.findByIdAndRemove(req.params.id, req.body)
-        .then(cocktail => res.json({ msg: 'Cocktail deleted successfully!' }))
-        .catch(err => res.status(404).json({ error: 'No such a Cocktail.' }))
+router.delete('/:id', deleteCocktail, function (req, res) {
+
 });
 
 module.exports = router;
