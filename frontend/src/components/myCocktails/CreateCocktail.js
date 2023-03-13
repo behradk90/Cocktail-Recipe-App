@@ -12,7 +12,7 @@ const CreateCocktail = (props) => {
         recipe: '',
         glass: '',
         ice: '',
-        garnish: '',
+        garnish: ''
     });
 
     const onChange = (e) => {
