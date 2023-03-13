@@ -36,11 +36,6 @@ function ShowCocktailDetails(props) {
                 <tbody>
                     <tr>
                         <th scope="row"></th>
-                        <td>Name</td>
-                        <td>{cocktail.name}</td>
-                    </tr>
-                    <tr>
-                        <th scope="row"></th>
                         <td>Description</td>
                         <td>{cocktail.description}</td>
                     </tr>
@@ -84,8 +79,8 @@ function ShowCocktailDetails(props) {
                     </div>
                     <br />
                     <div className="col-md-8 m-auto">
-                        <h1 className="display-4 text-center">Cocktail Recipe</h1>
-                        <p className="lead text-center">View Cocktail Info</p>
+                        <h1 className="display-4 text-center">{cocktail.name}</h1>
+                        <p className="lead text-center">Cocktail Info:</p>
                         <hr /> <br />
                     </div>
                     <div className="col-md-10 m-auto">{CocktailItem}</div>

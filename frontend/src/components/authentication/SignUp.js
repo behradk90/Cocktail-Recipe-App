@@ -42,7 +42,7 @@ const SignUp = (props) => {
             <div className="container">
                 <div className="row">
                     <div className="col-md-8 m-auto">
-                        <h1 className="display-4 text-center">Register/SignUp</h1>
+                        <h1 className="display-4 text-center">Register</h1>
 
                         <form noValidate onSubmit={onSubmit}>
                             <div className="form-group">
