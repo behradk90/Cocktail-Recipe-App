@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
 
 import Home from './components/home/Home';
+import NavBar from './components/home/NavBar';
 import ShowCocktailList from './components/myCocktails/ShowCocktailList'
 import CreateCocktail from './components/myCocktails/CreateCocktail';
 import UpdateCocktailInfo from './components/myCocktails/UpdateCocktailInfo';
@@ -11,6 +12,7 @@ import SignUp from './components/authentication/SignUp';
 function App() {
   return (
     <Router>
+      <NavBar />
       <div>
         <Routes>
           <Route path='/' element={<Home />} />

@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 function Home() {
     return (
         <div className='d-flex justify-content-center'>
-            <h1>Cocktail-App</h1>
+            <h1>CocktailApp</h1>
             <Link
                 to='cocktail-list'
                 className='btn btn-info center'
