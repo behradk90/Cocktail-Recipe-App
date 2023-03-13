@@ -4,13 +4,9 @@ const { signUp, signIn } = require('../controllers/auth.controller');
 const verifyToken = require('../middleware/authJWT');
 const User = require('../models/user');
 
-router.post("/register", signUp, function (req, res) {
+router.post("/register", signUp);
 
-});
-
-router.post("/login", signIn, function (req, res) {
-
-});
+router.post("/login", signIn);
 
 router.get('/admin', verifyToken, function (req, res) {
     if (!User) {

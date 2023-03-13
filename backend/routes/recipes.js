@@ -6,29 +6,18 @@ const {
     createCocktail,
     updateCocktail,
     deleteCocktail
-} = require('../controllers/recipe.controller')
-const Cocktail = require('../models/recipe');
+} = require('../controllers/recipe.controller');
 
 router.get('/test', (req, res) => res.send('Recipes route testing!'));
 
-router.get('/', cocktailList, function (req, res) {
+router.get('/', cocktailList);
 
-});
+router.get('/:id', cocktailDetails);
 
-router.get('/:id', cocktailDetails, function (req, res) {
+router.post('/', createCocktail);
 
-});
+router.put('/:id', updateCocktail);
 
-router.post('/', createCocktail, function (req, res) {
-
-});
-
-router.put('/:id', updateCocktail, function (req, res) {
-
-});
-
-router.delete('/:id', deleteCocktail, function (req, res) {
-
-});
+router.delete('/:id', deleteCocktail);
 
 module.exports = router;
