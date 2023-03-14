@@ -8,6 +8,7 @@ import CreateCocktail from './components/myCocktails/CreateCocktail';
 import UpdateCocktailInfo from './components/myCocktails/UpdateCocktailInfo';
 import ShowCocktailDetails from './components/myCocktails/ShowCocktailDetails';
 import SignUp from './components/authentication/SignUp';
+import Login from './components/authentication/Login';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
       <div>
         <Routes>
           <Route path='/' element={<Home />} />
+          <Route path='/login' element={<Login />} />
           <Route path='/sign-up' element={<SignUp />} />
           <Route path='/cocktail-list' element={<ShowCocktailList />} />
           <Route path='/create-cocktail' element={<CreateCocktail />} />

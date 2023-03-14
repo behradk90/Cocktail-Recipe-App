@@ -29,7 +29,7 @@ const NavBar = () => {
                         Login
                     </Link>
                     <Link className="nav-item nav-link" to='/sign-up'>
-                        Register
+                        Login
                     </Link>
                     {/* <li className="nav-item dropdown">
                         <a

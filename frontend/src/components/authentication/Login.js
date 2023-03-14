@@ -36,7 +36,45 @@ const Login = (props) => {
     }
 
     return (
-        <div></div>
+        <div className="LoginUser">
+            <div className="container">
+                <div className="row">
+                    <div className="col-md-8 m-auto">
+                        <h1 className="display-4 text-center">Register</h1>
+
+                        <form noValidate onSubmit={onSubmit}>
+                            <div className="form-group">
+                                <input
+                                    type="text"
+                                    placeholder="E-mail Address"
+                                    name="email"
+                                    className="form-control"
+                                    value={user.email}
+                                    onChange={onChange}
+                                />
+                            </div>
+                            <br />
+
+                            <div className="form-group">
+                                <input
+                                    type="text"
+                                    placeholder="Password"
+                                    name="password"
+                                    className="form-control"
+                                    value={user.password}
+                                    onChange={onChange}
+                                />
+                            </div>
+                            <br />
+
+                            <input type="submit"
+                                className="btn btn-outline-info btn-block mt-4"
+                            />
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
     )
 }
 
