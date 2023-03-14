@@ -3,11 +3,11 @@ import { Link } from 'react-router-dom';
 
 function Home() {
     return (
-        <div className='d-flex justify-content-center'>
+        <div className='text-center m-auto'>
             <h1>CocktailApp</h1>
             <Link
                 to='cocktail-list'
-                className='btn btn-info center'
+                className='btn btn-info'
             >
                 Enter
             </Link>
