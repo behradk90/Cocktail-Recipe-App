@@ -13,7 +13,8 @@ function ShowCocktailList() {
                 setCocktails(res.data);
             })
             .catch((err) => {
-                console.log('Error from ShowCocktailList.')
+                console.log('Error from ShowCocktailList.');
+                console.log(err);
             });
     }, []);
 

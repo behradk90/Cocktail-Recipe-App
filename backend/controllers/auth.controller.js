@@ -2,6 +2,10 @@ const JWT = require('jsonwebtoken');
 const bcrypt = require('bcrypt');
 const User = require('../models/user');
 
+const createToken = (_id) => {
+    return JWT.sign({ _id }, process.env.API_SECRET, { expiresIn: 86400 });
+}
+
 exports.signUp = (req, res) => {
     const user = new User({
         name: req.body.name,
@@ -57,14 +61,16 @@ exports.signIn = (req, res) => {
                         message: "Invalid Password!"
                     });
             }
-            // Signing token wih user id
-            let token = JWT.sign({
-                id: user.id
-            }, process.env.API_SECRET, {
-                expiresIn: 86400
-            });
+            // Signing token with user id
+            const token = createToken(user._id)
+            // let token = JWT.sign({
+            //     id: user.id
+            // }, process.env.API_SECRET, {
+            //     expiresIn: 86400
+            // });
             // Respond to client request with user profile: success message and access token
             res.status(200)
+                .json({ token })
                 .send({
                     user: {
                         id: user.id,
