@@ -2,9 +2,9 @@ const JWT = require('jsonwebtoken');
 const bcrypt = require('bcrypt');
 const User = require('../models/userModel');
 
-const createToken = (_id) => {
-    return JWT.sign({ _id }, process.env.API_SECRET, { expiresIn: 86400 });
-}
+// const createToken = (_id) => {
+//     return JWT.sign({ _id }, process.env.API_SECRET, { expiresIn: 86400 });
+// }
 
 const signUp = async (req, res) => {
     const user = new User({
