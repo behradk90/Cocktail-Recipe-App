@@ -1,5 +1,5 @@
 const JWT = require('jsonwebtoken');
-const User = require('../models/user');
+const User = require('../models/userModel');
 
 const verifyToken = (req, res, next) => {
     if (req.headers && req.headers.authorization && req.headers.authorization.split(' ')[0] === 'JWT') {

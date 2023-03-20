@@ -30,7 +30,7 @@ const SignUp = (props) => {
                     created: ''
                 });
 
-                navigate('/cocktail-list')
+                navigate('/login')
             })
             .catch((err) => {
                 console.log('Error in SignUp!');

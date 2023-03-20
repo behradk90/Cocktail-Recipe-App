@@ -1,4 +1,4 @@
-const Cocktail = require('../models/recipe');
+const Cocktail = require('../models/recipeModel');
 
 exports.cocktailList = (req, res) => {
     Cocktail.find()

@@ -6,7 +6,7 @@ const {
     createCocktail,
     updateCocktail,
     deleteCocktail
-} = require('../controllers/recipe.controller');
+} = require('../controllers/recipeController');
 
 router.get('/test', (req, res) => res.send('Recipes route testing!'));
 

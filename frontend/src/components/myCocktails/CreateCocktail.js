@@ -37,6 +37,7 @@ const CreateCocktail = (props) => {
             })
             .catch((err) => {
                 console.log('Error in CreateCocktail!');
+                console.log(err)
             });
     };
 

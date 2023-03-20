@@ -1,12 +1,12 @@
 const JWT = require('jsonwebtoken');
 const bcrypt = require('bcrypt');
-const User = require('../models/user');
+const User = require('../models/userModel');
 
 const createToken = (_id) => {
     return JWT.sign({ _id }, process.env.API_SECRET, { expiresIn: 86400 });
 }
 
-exports.signUp = (req, res) => {
+const signUp = (req, res) => {
     const user = new User({
         name: req.body.name,
         email: req.body.email,
@@ -30,7 +30,7 @@ exports.signUp = (req, res) => {
     });
 };
 
-exports.signIn = (req, res) => {
+const login = (req, res) => {
     User.findOne({
         email: req.body.email
     })
@@ -82,3 +82,5 @@ exports.signIn = (req, res) => {
                 });
         });
 };
+
+module.exports = { signUp, login }
