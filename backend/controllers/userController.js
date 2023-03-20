@@ -6,7 +6,7 @@ const createToken = (_id) => {
     return JWT.sign({ _id }, process.env.API_SECRET, { expiresIn: 86400 });
 }
 
-const signUp = (req, res) => {
+const signUp = async (req, res) => {
     const user = new User({
         name: req.body.name,
         email: req.body.email,
@@ -62,12 +62,12 @@ const login = (req, res) => {
                     });
             }
             // Signing token with user id
-            const token = createToken(user._id)
-            // let token = JWT.sign({
-            //     id: user.id
-            // }, process.env.API_SECRET, {
-            //     expiresIn: 86400
-            // });
+            //const token = createToken(user._id)
+            let token = JWT.sign({
+                id: user.id
+            }, process.env.API_SECRET, {
+                expiresIn: 86400
+            });
             // Respond to client request with user profile: success message and access token
             res.status(200)
                 .json({ token })
