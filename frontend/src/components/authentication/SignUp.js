@@ -20,7 +20,7 @@ const SignUp = (props) => {
     const onSubmit = (e) => {
         e.preventDefault();
 
-        axios.post('http://localhost:8080/user/register', user)
+        axios.post('http://localhost:8080/user/signup', user)
             .then((res) => {
                 setUser({
                     name: '',

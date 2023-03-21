@@ -6,13 +6,14 @@ const User = require('../models/userModel');
 //     return JWT.sign({ _id }, process.env.API_SECRET, { expiresIn: 86400 });
 // }
 
-const signUp = async (req, res) => {
+const signUp = (req, res) => {
     const user = new User({
         name: req.body.name,
         email: req.body.email,
         role: req.body.role,
         password: bcrypt.hashSync(req.body.password, 8)
     });
+
 
     user.save((err, user) => {
         if (err) {
@@ -38,7 +39,7 @@ const login = (req, res) => {
             if (err) {
                 res.status(500)
                     .send({
-                        message: err
+                        message: "Login error.", err
                     });
                 return;
             }
@@ -70,7 +71,6 @@ const login = (req, res) => {
             });
             // Respond to client request with user profile: success message and access token
             res.status(200)
-                .json({ token })
                 .send({
                     user: {
                         id: user.id,

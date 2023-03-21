@@ -4,7 +4,7 @@ const { signUp, login } = require('../controllers/userController');
 const verifyToken = require('../middleware/authJWT');
 const User = require('../models/userModel');
 
-router.post("/register", signUp);
+router.post("/signup", signUp);
 
 router.post("/login", login);
 

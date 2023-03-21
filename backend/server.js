@@ -3,6 +3,7 @@ const connectDB = require('./config/db')
 const cors = require('cors');
 const cocktailRoutes = require('./routes/recipes');
 const userRoutes = require('./routes/users');
+require('dotenv').config()
 
 const app = express();
 
