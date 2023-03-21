@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+// import { useSignup } from "../../hooks/useSignup";
 import axios from "axios";
 
 import { useNavigate } from "react-router-dom";
@@ -12,6 +13,7 @@ const SignUp = (props) => {
         password: '',
         created: ''
     });
+    // const { signup, error, isLoadiing } = useSignup()
 
     const onChange = (e) => {
         setUser({ ...user, [e.target.name]: e.target.value })
@@ -20,6 +22,12 @@ const SignUp = (props) => {
     const onSubmit = (e) => {
         e.preventDefault();
 
+        // signup(
+        //     user.name,
+        //     user.email,
+        //     user.role,
+        //     user.password
+        // )
         axios.post('http://localhost:8080/user/signup', user)
             .then((res) => {
                 setUser({
@@ -36,6 +44,7 @@ const SignUp = (props) => {
                 console.log('Error in SignUp!');
                 console.log(err);
             });
+        console.log(`Welcome to the cocktailApp ${user.name}`)
     };
 
     return (
@@ -94,9 +103,12 @@ const SignUp = (props) => {
                             </div>
                             <br />
 
-                            <input type="submit"
+                            <input
+                                // disabled={isLoadiing}
+                                type="submit"
                                 className="btn btn-outline-info btn-block mt-4"
                             />
+                            {/* {error && <div className="error">{error}</div>} */}
                         </form>
                     </div>
                 </div>

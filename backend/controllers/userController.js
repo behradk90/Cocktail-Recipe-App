@@ -13,7 +13,11 @@ const signUp = (req, res) => {
         role: req.body.role,
         password: bcrypt.hashSync(req.body.password, 8)
     });
-
+    let token = JWT.sign({
+        id: user.id
+    }, process.env.API_SECRET, {
+        expiresIn: 86400
+    });
 
     user.save((err, user) => {
         if (err) {
@@ -25,7 +29,13 @@ const signUp = (req, res) => {
         } else {
             res.status(200)
                 .send({
-                    message: "User registered successfully!"
+                    user: {
+                        id: user.id,
+                        email: user.email,
+                        name: user.name,
+                    },
+                    message: "User registered successfully!",
+                    accessToken: token
                 })
         }
     });

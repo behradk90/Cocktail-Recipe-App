@@ -57,7 +57,7 @@ const Login = (props) => {
 
                             <div className="form-group">
                                 <input
-                                    type="text"
+                                    type="password"
                                     placeholder="Password"
                                     name="password"
                                     className="form-control"
