@@ -60,7 +60,7 @@ const SignUp = (props) => {
 
                             <div className="form-group">
                                 <input
-                                    type="text"
+                                    type="email"
                                     placeholder="E-mail Address"
                                     name="email"
                                     className="form-control"
@@ -84,7 +84,7 @@ const SignUp = (props) => {
 
                             <div className="form-group">
                                 <input
-                                    type="text"
+                                    type="password"
                                     placeholder="Password"
                                     name="password"
                                     className="form-control"

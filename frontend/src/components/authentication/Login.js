@@ -73,7 +73,9 @@ const Login = (props) => {
                             <Link
                                 className="btn btn-outline-warning btn-block mt-4"
                                 to='/sign-up'
-                            >Or Register</Link>
+                            >
+                                Or Register
+                            </Link>
                         </form>
                     </div>
                 </div>

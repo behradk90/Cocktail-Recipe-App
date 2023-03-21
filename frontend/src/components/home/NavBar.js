@@ -28,9 +28,9 @@ const NavBar = () => {
                     <Link className="nav-item nav-link" to='/login'>
                         Login
                     </Link>
-                    {/* <Link className="nav-item nav-link" to='/sign-up'>
+                    <Link className="nav-item nav-link" to='/signup'>
                         Register
-                    </Link> */}
+                    </Link>
                     {/* <li className="nav-item dropdown">
                         <a
                             className="nav-link dropdown-toggle"
