@@ -1,6 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
-import { useAuthContext } from "../Context/AuthContext";
+import { useAuthContext } from "./useAuthContext";
 
 const useLogin = () => {
     const [loading, setLoading] = useState(false);
@@ -11,7 +11,7 @@ const useLogin = () => {
         setLoading(true);
         setError(null);
         axios
-            .post('', { email, password })
+            .post('http://localhost:8080/user/login', { email, password })
             .then((res) => {
                 setLoading(false);
                 setAuthData(res.data);

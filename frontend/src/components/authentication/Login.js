@@ -28,6 +28,7 @@ const Login = (props) => {
                     password: '',
                 });
                 navigate('/cocktail-list')
+                console.log(`welcome ${login.email}`)
             })
             .catch((err) => {
                 console.log('Error in Login.js');
